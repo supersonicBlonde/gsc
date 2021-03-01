@@ -1,0 +1,10 @@
+.wp-block-mytheme-section{
+	box-sizing: border-box;
+	background-color: #f00;
+	color: #fff;
+	display: block;
+	padding: 1em;
+	margin-bottom: 1em;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
