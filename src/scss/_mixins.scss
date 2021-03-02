@@ -1,0 +1,33 @@
+/*
+    @package purnatur
+    
+    MIXINS
+  ---------------------------------
+*/
+
+@mixin animate ( $attr, $time){
+    /* -webkit-transition: $attr $time ease;
+    -moz-transition: $attr $time ease;
+    -ms-transition: $attr $time ease;
+    -o-transition: $attr $time ease; */
+    transition: $attr $time;
+}
+
+@mixin transform( $val ) {
+    -webkit-transform: $val;
+    -moz-transform: $val;
+    -ms-transform: $val;
+    -o-transform: $val;
+    transform: $val;
+}
+
+@mixin boxshadow {
+    -webkit-box-shadow: 2px 10px 5px -6px rgba(0,0,0,0.37);
+    -moz-box-shadow: 2px 10px 5px -6px rgba(0,0,0,0.37);
+    box-shadow: 2px 10px 5px -6px rgba(0,0,0,0.37);
+}
+
+@keyframe spin {
+    from { transform: rotate(0)}
+    to { transform: rotate(360)}
+}

@@ -1,0 +1,82 @@
+/**********************************************
+		STYLING NAVIGATION
+
+		**************************************/
+
+
+.menu-item {
+	a {
+		font-family: $font__primary;
+		color: $color__primary!important;
+	}
+}
+
+#top-bar {
+
+
+	ul {
+		display:flex;
+		list-style-type:  none;
+	}
+
+	.menu-item {
+
+			.nav-link {
+				text-decoration: underline;	
+				font-size: 0.8em;
+				padding: 0;
+		}
+
+		&:not(:last-child) .nav-link {
+			&:after {
+				content: "|";
+				padding: 0 .5em;
+			}
+		}
+	}
+}
+
+#main-navigation	{		
+	
+		.menu-item {
+			
+			padding:0 1em;
+
+			a {
+				font-weight: 600;
+				text-transform: uppercase;
+				font-size: 0.87em;
+				letter-spacing: 0.6px;
+			}
+
+			&:not(.menu-item-invert):not(.menu-btn) {
+
+				a {
+					color: $color__primary!important;
+				}
+
+			}
+
+		}
+
+		.menu-item-invert {
+
+			padding: 0 2em;
+
+			a {
+				color: $color__accent!important;
+			}
+
+		}
+
+		.menu-btn {
+			background: $color__accent;
+			padding: 1em 2em;
+			border-radius: 35px;
+
+			a {
+				color: white!important;
+			}
+		}
+}
+

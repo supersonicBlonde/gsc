@@ -11,7 +11,7 @@
 
 <footer class="quanta-footer">
 </footer>
-
+</div><!-- #global-container -->
 
 <?php wp_footer(); ?>
 </body>

@@ -15,6 +15,7 @@ add_theme_support('post-thumbnails');
 
 //menu options
 function quanta_register_nav_menu() {
+	register_nav_menu( 'top-bar' , 'This is the Top Bar menu' );
 	register_nav_menu( 'primary-left' , 'This is the Main Top Menu Left Side' );
 	register_nav_menu( 'primary-right' , 'This is the Main Top Menu Right Side' );
 	register_nav_menu( 'footer' , 'This is the Footer Menu' );
@@ -145,14 +146,3 @@ function quanta_get_current_url() {
 	$referer = $http . $_SERVER['HTTP_HOST'];
 	return  $referer.$_SERVER['REQUEST_URI']; 
 }
-
-function purnatur_superstore_widget() {
-    register_sidebar( array(
-        'name'          => __( 'Superstore', '^purnatur' ),
-        'id'            => 'superstore',
-        'description'   => __( 'Widgets in this area will be shown on taxonomy page.', 'purnatur' ),
-        'before_widget' => '<div>',
-        'after_widget'  => '</div>'
-    ) );
-}
-add_action( 'widgets_init', 'purnatur_superstore_widget' );

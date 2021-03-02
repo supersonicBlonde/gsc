@@ -22,7 +22,8 @@
 
 <body <?php body_class(); ?>>
 	
+	<div id="global-container">		
 
 	<header class="master-header">
-
-		<?php //get_template_part('template-parts/nav' , 'main'); ?>
+		<?php get_template_part('template-parts/nav' , 'topbar'); ?>
+		<?php get_template_part('template-parts/nav' , 'main'); ?>
