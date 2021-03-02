@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Product Sans'), url('../../fonts/ProductSans-Regular.woff') format('woff');
+  }
+
+
+.purnatur-icons {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'purnatur' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.purnatur-arrow1:before {
+  content: "\e902";
+  color: #089c66;
+}
+.purnatur-mail:before {
+  content: "\e901";
+  color: #fff;
+}
+.purnatur-magnifier:before {
+  content: "\e900";
+}
+.purnatur-add:before {
+  content: "\e905";
+  color: #fff;
+}
+.purnatur-arrow:before {
+  content: "\e906";
+}
+.purnatur-bg-quote:before {
+  content: "\e907";
+  color: #089c66;
+}
+.purnatur-bullet:before {
+  content: "\e908";
+  color: #fff;
+}
+.purnatur-facebook:before {
+  content: "\e909";
+  color: #fff;
+}
+.purnatur-icon-menu:before {
+  content: "\e90a";
+}
+.purnatur-instagram:before {
+  content: "\e90b";
+  color: #fff;
+}
+.purnatur-linkedin:before {
+  content: "\e90c";
+  color: #fff;
+}
+.purnatur-pinterest:before {
+  content: "\e90d";
+  color: #fff;
+}
+.purnatur-quote:before {
+  content: "\e90e";
+  color: #089c66;
+}
+.purnatur-sep-point:before {
+  content: "\e90f";
+}
+.purnatur-twitter:before {
+  content: "\e910";
+  color: #fff;
+}
+.purnatur-youtube:before {
+  content: "\e911";
+  color: #fff;
+}
