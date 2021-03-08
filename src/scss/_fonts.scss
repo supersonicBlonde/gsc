@@ -1,83 +1,173 @@
-@font-face {
-  font-family: 'Product Sans';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Product Sans'), url('../../fonts/ProductSans-Regular.woff') format('woff');
+  @font-face {
+    font-family: 'gsc';
+    src:
+      url('../../fonts/gsc.ttf?a667jr') format('truetype'),
+      url('../../fonts/gsc.woff?a667jr') format('woff'),
+      url('../../fonts/gsc.svg?a667jr#gsc') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
   }
-
-
-.purnatur-icons {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'purnatur' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.purnatur-arrow1:before {
-  content: "\e902";
-  color: #089c66;
-}
-.purnatur-mail:before {
-  content: "\e901";
-  color: #fff;
-}
-.purnatur-magnifier:before {
-  content: "\e900";
-}
-.purnatur-add:before {
-  content: "\e905";
-  color: #fff;
-}
-.purnatur-arrow:before {
-  content: "\e906";
-}
-.purnatur-bg-quote:before {
-  content: "\e907";
-  color: #089c66;
-}
-.purnatur-bullet:before {
-  content: "\e908";
-  color: #fff;
-}
-.purnatur-facebook:before {
-  content: "\e909";
-  color: #fff;
-}
-.purnatur-icon-menu:before {
-  content: "\e90a";
-}
-.purnatur-instagram:before {
-  content: "\e90b";
-  color: #fff;
-}
-.purnatur-linkedin:before {
-  content: "\e90c";
-  color: #fff;
-}
-.purnatur-pinterest:before {
-  content: "\e90d";
-  color: #fff;
-}
-.purnatur-quote:before {
-  content: "\e90e";
-  color: #089c66;
-}
-.purnatur-sep-point:before {
-  content: "\e90f";
-}
-.purnatur-twitter:before {
-  content: "\e910";
-  color: #fff;
-}
-.purnatur-youtube:before {
-  content: "\e911";
-  color: #fff;
-}
+  
+  .gsc-icons {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'gsc' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .gsc-GSC_bubles .path1:before {
+    content: "\e900";
+    color: rgb(48, 77, 96);
+  }
+  .gsc-GSC_bubles .path2:before {
+    content: "\e901";
+    margin-left: -1.2861328125em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_check .path1:before {
+    content: "\e902";
+    color: rgb(48, 77, 96);
+  }
+  .gsc-GSC_check .path2:before {
+    content: "\e903";
+    margin-left: -1.25em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_download .path1:before {
+    content: "\e904";
+    color: rgb(48, 77, 96);
+  }
+  .gsc-GSC_download .path2:before {
+    content: "\e905";
+    margin-left: -1.125em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_google .path1:before {
+    content: "\e906";
+    color: rgb(255, 255, 255);
+  }
+  .gsc-GSC_google .path2:before {
+    content: "\e907";
+    margin-left: -1em;
+    color: rgb(48, 77, 96);
+  }
+  .gsc-GSC_google .path3:before {
+    content: "\e908";
+    margin-left: -1em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_google .path4:before {
+    content: "\e909";
+    margin-left: -1em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_graph .path1:before {
+    content: "\e90a";
+    color: rgb(48, 77, 96);
+  }
+  .gsc-GSC_graph .path2:before {
+    content: "\e90b";
+    margin-left: -1.3330078125em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_hand .path1:before {
+    content: "\e90c";
+    color: rgb(48, 77, 96);
+  }
+  .gsc-GSC_hand .path2:before {
+    content: "\e90d";
+    margin-left: -0.75em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_heart:before {
+    content: "\e90e";
+    color: #ff1938;
+  }
+  .gsc-GSC_like .path1:before {
+    content: "\e90f";
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_like .path2:before {
+    content: "\e910";
+    margin-left: -1em;
+    color: rgb(48, 77, 96);
+  }
+  .gsc-GSC_pen .path1:before {
+    content: "\e911";
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_pen .path2:before {
+    content: "\e912";
+    margin-left: -1em;
+    color: rgb(48, 77, 96);
+  }
+  .gsc-GSC_puble .path1:before {
+    content: "\e913";
+    color: rgb(255, 255, 255);
+  }
+  .gsc-GSC_puble .path2:before {
+    content: "\e914";
+    margin-left: -1em;
+    color: rgb(48, 77, 96);
+  }
+  .gsc-GSC_puble .path3:before {
+    content: "\e915";
+    margin-left: -1em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_share .path1:before {
+    content: "\e916";
+    color: rgb(48, 77, 96);
+  }
+  .gsc-GSC_share .path2:before {
+    content: "\e917";
+    margin-left: -0.8701171875em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_share .path3:before {
+    content: "\e918";
+    margin-left: -0.8701171875em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_share .path4:before {
+    content: "\e919";
+    margin-left: -0.8701171875em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_shield .path1:before {
+    content: "\e91a";
+    color: rgb(48, 77, 96);
+  }
+  .gsc-GSC_shield .path2:before {
+    content: "\e91b";
+    margin-left: -1.25em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_trophy:before {
+    content: "\e91c";
+    color: #304d60;
+  }
+  .gsc-GSC_what .path1:before {
+    content: "\e91d";
+    color: rgb(48, 77, 96);
+  }
+  .gsc-GSC_what .path2:before {
+    content: "\e91e";
+    margin-left: -1em;
+    color: rgb(255, 25, 56);
+  }
+  .gsc-GSC_what .path3:before {
+    content: "\e91f";
+    margin-left: -1em;
+    color: rgb(255, 25, 56);
+  }
+  

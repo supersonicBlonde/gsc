@@ -1,0 +1,39 @@
+/**********************************************
+		TITLES STYLING
+
+		**************************************/
+
+h1 {
+  color: $color__h1;
+  font-size: 1.25em;
+  text-transform: uppercase;
+  font-weight: $medium;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: $bold;
+  line-height:1.5;
+}
+
+h2.intro-title {
+  font-size: 1.87em;
+  font-weight: $bold; 
+  line-height: 1.5;
+}
+
+.background-dark h2 {
+  color: white;
+  font-size: 3em;
+}
+
+h3 {
+  color: $color__accent;
+  font-size: 1em;
+  font-weight: $bold;
+}
+
+h4 {
+  font-size: 0.93em;
+  font-weight: $bold;
+}

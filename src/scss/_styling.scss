@@ -1,0 +1,66 @@
+/**********************************************
+		ELEMENT STYLING
+
+		**************************************/
+
+#section3, #customer_stories {
+	background: $background-light;
+	padding:5em;
+}
+
+
+.steps-list {
+	list-style-type: none;
+
+	li {
+
+
+		&>div {
+			background: $background-light;
+			padding: 2em;
+			padding-bottom: 10em;
+		}
+
+		.border-bottom {
+			border-color: #DFDFDF;
+		}
+
+		.instruction {
+			font-weight: $bold;
+			line-height: 1.5;
+			font-size: 1.25em;
+			padding-bottom: 1.5rem;
+		}
+
+
+		.count {
+			color: $color__accent;
+			font-size: 4.3em;
+			line-height: 0.7em;
+			font-weight: $bold;
+		}
+
+		.icon {
+			width: 33px;
+			height: auto;
+		}
+
+		&:nth-child(3) {
+			.instruction {
+				padding-bottom: 3.5rem;
+			}
+		}
+	}
+} 
+
+.user-number {
+		font-weight: $bold;
+		font-size: 1.56em;
+		text-transform: uppercase;
+		color: $color__accent;	
+
+		span:first-child {
+			font-size: 4.12rem;
+			color: $color__body;	
+		}
+}

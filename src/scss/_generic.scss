@@ -3,14 +3,101 @@
 
 		**************************************/
 
-		body {
+body {
+	color: $color__body;
+	font-weight: 400;
+	font-family: $font__primary;
+	font-size: 10px;
+	font-weight: $medium;
 
-			color: $color__body;
-			font-weight: 400;
-			font-family: $font__primary;
-			font-size: 10px;
-		
-			@media(min-width:992px) {
-				font-size: 16px;
-			}
-		}
+	@media(min-width:992px) {
+		font-size: 16px;
+	}
+}
+
+p {
+	font-family: $font__primary;
+	line-height: 1.8;
+	font-size: 0.87em;
+	font-weight: 300;
+}
+
+ul {
+	margin:0;
+	padding: 0;
+}
+
+.background-dark p {
+	color: white;
+}
+
+img:not(.non-resp) {
+	max-width: 100%;
+	height:auto;
+}
+
+.embed-container { 
+	position: relative; 
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+} 
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed { 
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.shadowed {
+	@include boxshadow;
+}
+
+.background-dark {
+	background: $background-dark;
+}
+
+
+.lh-2x {
+line-height: 2.5;
+}
+
+.button {
+border-radius: 35px;
+padding: 1em 2em;
+font-size: 0.87em;
+border: 1px solid $color__accent;
+display: inline-block;
+
+&:hover {
+	text-decoration: none!important;
+}
+
+&.default {
+	background: $color__accent;
+	color: white;
+}
+
+&.invert {
+	color: $color__body;
+	
+}
+
+}
+
+.link-list {
+li {
+	
+	a, a:visited { 
+		font-size: 0.87em;
+		font-weight: $semi;
+		text-decoration: underline;
+		color: $color__body;
+	}
+}
+}

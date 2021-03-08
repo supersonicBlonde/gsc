@@ -1,6 +1,33 @@
 #global-container {
-  max-width: 1328px;
+  max-width: 1640px;
   margin: 0 auto;
+}
+
+.steps-list {
+	li {
+		width: 100%;
+
+		@media(min-width:992px) {
+			width:24%;
+		}
+	}
+
+	@media(min-width:992px) {
+		.portrait  {
+			left:50%;
+			transform: translateX(-50%);
+
+			img {
+				max-width: 200px;
+			}
+
+		}
+	}
+
+}
+
+#customer_stories {
+	margin-top: 10em;;
 }
 
 @media (min-width: 1200px) {
