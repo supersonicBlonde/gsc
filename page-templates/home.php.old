@@ -1,0 +1,160 @@
+<?php
+/**
+* Template Name: HomeOld
+*
+* @package gsc
+*/
+
+get_header();
+
+
+?>
+
+	</header>
+
+
+	<div class="primary global-container" class="content-area top-spacing">
+
+		<main id="main" class="site-main" role="main">
+
+		<?php if(have_rows('home_1')): while(have_rows('home_1')): the_row();?> 
+			<?php $img = get_sub_field('image');?>
+			<div id="section1" class="section mt-5">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-12 col-md-6 mb-4 mb-md-0">
+								<h1 class="colored"><?php the_sub_field('over_title_home_1'); ?></h1>
+								<h2 class="intro-title"><?php the_sub_field('title_home_1'); ?></h2>
+								<h4><?php the_sub_field('sub_title_home_1'); ?></h3>
+								<p class="w-80"><?php the_sub_field('paragraph_home_1'); ?></p>
+							<div>
+								<a href="#" class="button default"><?php the_sub_field('button_left_home_1_text') ?></a>
+								<a href="#" class="button invert"><?php the_sub_field('button_right_text_home_1') ?></a>
+							</div>
+						</div>
+						
+						<div class="col-12 col-md-5 text-center mb-4 mb-md-0">
+								<!-- <div style=background-image:url(<?php echo $img['url']; ?>)></div> -->
+							<?php
+								$media_type = get_sub_field('media_type');
+								if($media_type == "image"):
+									$size = 'large'; 
+									if( $img ):
+											echo wp_get_attachment_image( $img, $size );
+									endif;
+									else:
+										 if(!empty(get_sub_field('video'))): ?>
+											<video class="shadow" poster="" id="bgvid" playsinline autoplay muted loop>
+												<source src="<?php the_sub_field('video') ?>" type="video/mp4">
+												I'm sorry; your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+											</video>
+										<?php endif; ?>
+								<?php endif; ?>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php endwhile; endif; ?>
+
+			<?php if(have_rows('home_2')): while(have_rows('home_2')): the_row();?> 
+			<div id="section2" class="section regular-spacing">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-md-6">
+								<h3><?php the_sub_field('title_home_2'); ?></h3>
+								<h2><?php the_sub_field('paragraph_home_2'); ?></h2>
+						</div>
+					</div>
+					<?php if(have_rows('logos_slider_home_2')): ?>
+					<div class="row">
+						<div id="logos-slider" class="slider">
+								<?php while(have_rows('logos_slider_home_2')): the_row(); ?>
+									<?php $logo =  get_sub_field('logo'); ?>
+									<div><img style="width:72px; height: 72px" src="<?php echo esc_url($logo['sizes']['thumbnail']); ?>" alt="<?php echo esc_url($logo['alt']); ?>"></div>
+								<?php endwhile; ?>
+					</div>
+					</div>
+					<?php endif; ?>
+				</div>
+			</div>
+			<?php endwhile; endif; ?>
+
+			<?php if(have_rows('home_3')): while(have_rows('home_3')): the_row();?> 
+			<div id="section3" class="background-light section regular-spacing regular-padding">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-12">
+							<div class="container">
+								<div class="row">
+									<div class="col-12">
+										<h3><?php the_sub_field('title'); ?></h3>
+										<h2><?php the_sub_field('paragraph'); ?></h2>
+									</div>
+								</div>
+								<?php if(!empty(get_sub_field('video'))): ?>
+								<div class="row">
+									<div class="col-12 col-md-9">
+									<div class="embed-responsive embed-responsive-16by9 shadowed">
+										<?php the_sub_field('video'); ?>
+										</div>
+									</div>
+								</div>
+								<?php endif; ?>
+								<div class="row mt-5">
+									<div class="col-12 col-md-6 col-xl-5">
+										<h2><?php the_sub_field('title_sub_section'); ?></h2>
+										<p><?php the_sub_field('sub_section_paragraph_left'); ?></p>
+									</div>
+									<div class="col-12 col-md-6 col-xl-5">
+										<p><?php the_sub_field('sub_section_paragraph_right'); ?></p>
+										<?php if(have_rows('list_sub_section_home_3')): ?>
+										<ul class="link-list arrow-bullets">
+										<?php while(have_rows('list_sub_section_home_3')): the_row();?>
+										<li>
+										<a href="<?php the_sub_field('link') ?>" class="read-more"><?php the_sub_field('text_link') ?></a>
+										</li>
+										<?php endwhile; ?>
+										</ul>
+									<?php endif; ?>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php endwhile; endif; ?>
+
+					<?php if(have_rows('home_4')): while(have_rows('home_4')): the_row();?> 
+					<div id="section4" class="section double-top-spacing">
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<h3><?php the_sub_field('title'); ?></h3>
+									<h2><?php the_sub_field('paragraph'); ?></h2>
+								</div>
+							</div>
+							<?php get_template_part('template-parts/content' , 'steps'); ?>
+						</div>
+					</div>
+
+			<?php endwhile; endif; ?>
+
+			<!-- customer stories -->
+			<?php get_template_part("template-parts/content" , "stories"); ?>
+
+
+		
+		<?php get_template_part("template-parts/content" , "cta"); ?>
+		
+
+		<?php get_template_part('template-parts/content' , 'faq'); ?>
+		
+
+		</main>
+
+	</div><!-- .primary -->
+
+
+<?php get_footer(); ?>

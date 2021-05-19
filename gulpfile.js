@@ -38,12 +38,13 @@ var styleURL     = './dist/css/';
 var mapURL       = './';
 
 var jsSRC        = './src/js/';
-var jsBase		 = 'scripts.js';
+var jsBase		   = 'scripts.js';
+var jsLoadMore	   = 'loadmore.js';
 //var jsTimeline   = 'timeline.js';
 /*var jsSlider     = 'slider.js';
 var jsAuth       = 'auth.js';*/
 //var jsFiles      = [  jsAdmin, jsConnect];
-var jsFiles      = [  jsBase ];
+var jsFiles      = [  jsBase , jsLoadMore ];
 var jsURL        = './dist/js/';
 
 

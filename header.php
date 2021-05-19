@@ -22,8 +22,28 @@
 
 <body <?php body_class(); ?>>
 	
-	<div id="global-container">		
+	<div>		
 
-	<header class="master-header">
-		<?php get_template_part('template-parts/nav' , 'topbar'); ?>
-		<?php get_template_part('template-parts/nav' , 'main'); ?>
+	<header class="master-header" id="master-header">
+		<div class="global-container">
+			<?php get_template_part('template-parts/nav' , 'topbar'); ?>
+		</div>
+		<div class="main-navigation" id="main-navigation">	
+			<div class="global-container">
+				<?php get_template_part('template-parts/nav' , 'main'); ?>
+			</div>
+		</div>
+		<div id="submenu">
+			<ul class="d-flex">
+					<li>
+						<div class="mb-1"><strong>Shared Contacts for Gmail</strong></div>
+						<p>Share contacts with your team<br>anywhere.</p>
+						<a href="/google-workspace-shared-contacts-edition" class="regular"><?php echo __('Read More' , 'gsc'); ?></a>
+					</li>
+					<li>
+					<div class="mb-1"><strong>Google Workspace Shared Contacts Edition</strong></div>
+						<p>We integrate contact sharing as a feature of your<br>Google workspace.</p>
+						<a href="/solutions" class="regular"><?php echo __('Read More' , 'gsc'); ?></a>
+					</li>
+				</ul>
+		</div>

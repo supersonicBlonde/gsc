@@ -24,7 +24,19 @@
 @mixin boxshadow {
     box-shadow: 10px 10px 0px 0px rgba(230,230,230,0.75);
     -webkit-box-shadow: 10px 10px 0px 0px rgba(230,230,230,0.75);
-    -moz-box-shadow: 10px 10px 0px 0px rgba(230,230,230,0.75);
+    -moz-box-shadow: 1
+    
+    0px 10px 0px 0px rgba(230,230,230,0.75);
+}
+
+@mixin arrow {
+    content: '\f0a9';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 32px;
+    color: $color__accent;
+    margin-right: 1rem;
+    vertical-align: middle;
+   display: inline-block;
 }
 
 @keyframe spin {

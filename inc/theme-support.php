@@ -80,41 +80,6 @@ function quanta_posted_footer() {
 }
 
 
-function quanta_get_attachment( $num = 1 ) {
-
-	$output = '';
-
-	if (has_post_thumbnail() && $num == 1 ): 
-			
-		$output = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
-
-	 else: 
-
-		$attachments = get_posts( array(
-			'post_type'   		=> 'attachment',
-			'posts_per_page'	=> $num,
-			'post_parent'		=> get_the_ID()
-		));
-
-
-		if($attachments && $num == 1):
-		
-			foreach($attachments as $attachment):
-				$output = wp_get_attachment_url( $attachment->ID );
-			endforeach;
-
-		elseif($attachments && $num > 1):
-
-			$output = $attachments;
-		
-		endif;
-
-		wp_reset_postdata();
-
-	 endif;
-
-	return $output;
-}
 
 
 function quanta_embed_media($type = array()) {
@@ -146,3 +111,67 @@ function quanta_get_current_url() {
 	$referer = $http . $_SERVER['HTTP_HOST'];
 	return  $referer.$_SERVER['REQUEST_URI']; 
 }
+
+
+/* add multiple widgets areas */
+function widget_registration($name, $id, $description,$beforeWidget, $afterWidget, $beforeTitle, $afterTitle){
+	register_sidebar( array(
+			'name' => $name,
+			'id' => $id,
+			'description' => $description,
+			'before_widget' => $beforeWidget,
+			'after_widget' => $afterWidget,
+			'before_title' => $beforeTitle,
+			'after_title' => $afterTitle,
+	));
+}
+
+function multiple_widget_init(){
+	widget_registration('Footer Col 2', 'footer-sidebar-1', 'Address column', '', '', '', '');
+	widget_registration('Footer Col 3', 'footer-sidebar-2', 'Menu Footer', '', '', '', '');
+	widget_registration('Footer Col 4', 'footer-sidebar-3', 'Social Icons', '', '', '', '');
+}
+
+add_action('widgets_init', 'multiple_widget_init');
+
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
+
+
+// COUNT POSTS
+function quanta_set_post_views($postID) {
+	$count_key = 'quanta_post_views_count';
+	$count = get_post_meta($postID, $count_key, true);
+	if($count==''){
+			$count = 0;
+			delete_post_meta($postID, $count_key);
+			add_post_meta($postID, $count_key, '0');
+	}else{
+			$count++;
+			update_post_meta($postID, $count_key, $count);
+	}
+}
+//To keep the count accurate, lets get rid of prefetching
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+function quanta_get_post_views($postID){
+	$count_key = 'quanta_post_views_count';
+	$count = get_post_meta($postID, $count_key, true);
+	if($count==''){
+			delete_post_meta($postID, $count_key);
+			add_post_meta($postID, $count_key, '0');
+			return "0 View";
+	}
+	return $count.' Views';
+}
+
+
+function prefix_nav_description( $item_output, $item, $depth, $args ) {
+	if ( !empty( $item->description ) ) {
+			$item_output = str_replace( $args->link_after . '</a>', '<div class="menu-item-description">' . $item->description . '</div>' . $args->link_after . '</a>', $item_output );
+	}
+
+	return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 4 );

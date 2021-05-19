@@ -8,11 +8,22 @@
     font-style: normal;
     font-display: block;
   }
+
+  @font-face {
+    font-family: 'slick';
+    src:
+      url('../../fonts/slick.ttf') format('truetype'),
+      url('../../fonts/slick.woff') format('woff'),
+      url('../../fonts/slick.svg') format('svg'),
+      url('../../fonts/slick.eot') format('eot');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
   
   .gsc-icons {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'gsc' !important;
-    speak: never;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -24,6 +35,10 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  .gsc-check:before {
+    content: "\e920";
+    color: #ff1938;
+  }
   .gsc-GSC_bubles .path1:before {
     content: "\e900";
     color: rgb(48, 77, 96);
@@ -170,4 +185,6 @@
     margin-left: -1em;
     color: rgb(255, 25, 56);
   }
+  
+  
   

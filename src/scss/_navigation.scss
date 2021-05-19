@@ -4,12 +4,179 @@
 		**************************************/
 
 
-.menu-item {
+/* .menu-item {
 	a {
 		font-family: $font__primary;
 		color: $color__primary!important;
 	}
+} */
+.navbar-light .navbar-toggler {
+	border: none!important;
 }
+
+.navbar-nav {
+	padding-top: 2em;
+	padding-left: 2em;
+}
+
+.navbar-brand {
+ flex-grow: 2;
+}
+
+.signin-icon {
+	font-size: 2.5em;
+	color: $color__body;
+}
+
+.signin {
+	
+}
+
+//****************************
+//DROPDOWNS
+//****************************
+
+.main-navigation {
+	border-top: 1px solid $border;
+	border-bottom: 1px solid $border;
+
+	.navbar {
+		padding:1rem 0;
+	}
+}
+
+.navbar {
+
+
+	.menu-item {
+		
+		.dropdown-menu {
+			border:none;
+			background: transparent;
+			a {
+				font-size:.68rem;
+			}
+
+			@media(min-width: 992px) {
+				background:white;
+
+				a {
+					font-size: 1.1rem;
+				}
+			}
+		}
+
+	}
+
+	.current-menu-item {
+		ul.dropdown-menu {
+			a {
+				font-weight: 400;
+
+				&:hover {
+					font-weight: 700;
+				}
+
+				 &:after {
+				 	content:none;
+				 }
+			}
+		}
+	}
+
+	#menu-menu-buttons {
+		flex-direction: row;
+		align-items: center;
+	}
+
+
+	@media(min-width: 992px) {
+
+
+		.signin-icon {
+			display:none;
+		}
+
+		#menu-menu-buttons, #menu-top-bar {
+			margin-right:2em; 
+		}
+
+		.navbar-brand {
+			flex-grow: 1;
+		}
+
+		.navbar-nav {
+			padding-top: 0;
+			padding-left: 0;
+		}
+
+		ul.dropdown-menu {
+
+		/* 	display: none;
+			top: 50px;
+			border: none;
+			opacity: 0;
+			transform-origin: top;
+			@include transform(scaleY(0));
+			@include animate(all , 320ms); */
+
+			&:before {
+				padding-top:60px;
+			}
+
+			li {
+
+				a {
+					text-align: left;
+					background: none;
+
+					&:hover {
+						/* color: $color__main!important; */
+
+						&:after {
+							content: none;
+						}
+					}
+				}
+
+				ul.dropdown-menu {
+				/* 	position: static;
+					display:flex;
+					opacity: 1;
+					@include transform(scaleY(1)); */
+
+
+					li {
+						a {
+							&:hover {
+								/* color: $color__dark!important; */
+								text-decoration: underline;
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+		ul {
+
+			li:hover {
+
+				& > ul.dropdown-menu {
+				/* 	display: flex;
+					opacity: 1;
+					@include transform(scaleY(1)); */
+				}
+			}
+		}
+	}
+
+}
+//************************************************
+
+
+
 
 #top-bar {
 
@@ -20,6 +187,11 @@
 	}
 
 	.menu-item {
+
+		a {
+			font-family: $font__primary;
+			color: $color__primary!important;
+		}
 
 			.nav-link {
 				text-decoration: underline;	
@@ -40,19 +212,56 @@
 	
 		.menu-item {
 			
-			padding:0 1em;
+			padding:1em 1em;
 
 			a {
 				font-weight: 600;
 				text-transform: uppercase;
-				font-size: 0.87em;
+				font-size: 0.7em;
 				letter-spacing: 0.6px;
+				display: inline-block;
+
+				@media(min-width:1920px) {
+					font-size: 0.87em;
+				}
 			}
 
 			&:not(.menu-item-invert):not(.menu-btn) {
 
+				position: relative;
+
 				a {
 					color: $color__primary!important;
+
+					
+
+					&:after {
+						content: "";
+						display: block;
+						height:2px;
+						background: $color__accent;
+						@include animate(all , 320ms);
+						margin-top: 1em;
+						opacity: 0;
+						@include transform(translateY(2px));
+						/* width: calc(100% - 3.5em); */
+						/* position: absolute; */
+					}
+
+					&:hover {
+						&:after {
+							opacity: 1;
+							@include transform(translateY(0));
+						}
+					}
+				}
+
+				a:hover, &.current-menu-item a  {
+	
+					&:after {
+							opacity: 1;
+							@include transform(translateY(0));
+						}
 				}
 
 			}
@@ -71,7 +280,7 @@
 
 		.menu-btn {
 			background: $color__accent;
-			padding: 1em 2em;
+			padding: 0.5rem 1rem; 
 			border-radius: 35px;
 
 			a {
@@ -80,3 +289,55 @@
 		}
 }
 
+
+#submenu {
+	display: none;
+}
+
+
+
+@media(min-width:1440px) {
+
+
+	#submenu {
+		display: block;
+		ul {
+			padding-left: 14%; 
+		}
+		opacity: 0;
+		position:absolute;
+		z-index: 999;
+		width: 100%;
+		border-bottom: 1px solid $border;
+		li {
+			padding:2em 3em;
+		}	
+		background: white;
+	}
+
+	#submenu.transition ul {
+		transition: all .5s;
+	}
+
+	#submenu.reveal {
+		opacity: 1;
+
+		ul {
+		padding-left: 15%;
+		}
+	} 
+}
+
+.menu-footer-menu-container a {
+	 color: $color__primary;
+
+	 &:hover, &:visited {
+		color: $color__primary;
+	 }
+}
+
+.text-nav {
+	color: white;
+	font-size: 1.8em;
+	font-weight: $bold;
+}
